@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <cstring>
 #include <cassert>
-#include "Timer.h"
+// #include "Timer.h"
 
 extern "C" {
 #include "ppmb_io.h"
@@ -66,11 +66,11 @@ int main(int argc, char *argv[]) {
     hist_g = (int *) calloc(input.maxrgb+1, sizeof(int));
     hist_b = (int *) calloc(input.maxrgb+1, sizeof(int));
 
-    ggc::Timer t("histogram");
+    // ggc::Timer t("histogram");
 
-    t.start();
+    // t.start();
     histogram(&input, hist_r, hist_g, hist_b);
-    t.stop();
+    // t.stop();
 
 
     FILE *out = fopen(output_file, "w");
@@ -82,6 +82,6 @@ int main(int argc, char *argv[]) {
     } else {
       fprintf(stderr, "Unable to output!\n");
     }
-    printf("Time: %llu ns\n", t.duration());
+    // printf("Time: %llu ns\n", t.duration());
   }  
 }
