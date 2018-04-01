@@ -3,6 +3,7 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage{amsmath,amssymb,amsthm,dsfont}
 \usepackage{setspace,parskip,multicol,titling}
+\usepackage{makecell}
 
 \newcommand{\R}{\mathds{R}}
 \newcommand{\Z}{\mathds{Z}}
@@ -28,6 +29,14 @@
 
 	\section{Table of Results}
 
-	
+	\begin{center}
+	\begin{tabular}{ |m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}| }
+	\hline
+	\textbf{Threads} & \textbf{Hawkes} & \textbf{Earth} & \textbf{Flood} & \textbf{Noise} & \textbf{Phobos} & \textbf{Bear} & \textbf{Univ} \\ \hline
+	\textbf{1}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}\\ \hline
+	\textbf{2}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}\\ \hline
+	\textbf{4}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}\\ \hline
+	\textbf{8}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}\\ \hline
+	\end{tabular} \end{center} 
 
 \end{document}
