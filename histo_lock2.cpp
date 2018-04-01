@@ -85,7 +85,7 @@ void histogram(struct img *input, int firstRow, int lastRow, struct hists *h)
 	int start = (firstRow == 0) ? 0 : (firstRow - 1) * (*input).ysize;
 	int end = (lastRow - 1) * (*input).ysize;
 
-	for(int pix = start; pix < end; pix++) 
+	for(int pix = start; pix < end; pix++)
 	{
 		acquire(&redLock); (*h).hist_r[input->r[pix]] += 1; release(&redLock);
 		acquire(&greLock); (*h).hist_g[input->g[pix]] += 1; release(&greLock);
@@ -101,6 +101,7 @@ void print_histogram(FILE *f, int* hist, int N)
 	{
 		fprintf(f, "%d %d\n", i, hist[i]);
 	}
+	return;
 }
 
 // ----------------------------------------------------------------------------

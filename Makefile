@@ -1,4 +1,4 @@
-all: histogram
+all: histogram histo_private histo_lockfree histo_lock1 histo_lock2
 
 histogram: histogram.cpp ppmb_io.a
 	g++ -O3 $^ -o $@ -lm
