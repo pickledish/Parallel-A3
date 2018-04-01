@@ -155,8 +155,8 @@ int main(int argc, char *argv[]) {
 
 		// Actually run the algorithm! One chunk of rows for every thread used
 
-		// ggc::Timer t("histogram");
-		// t.start();
+		ggc::Timer t("histogram");
+		t.start();
 
 		for (int i = 0; i < threads; i++)
 		{
@@ -170,7 +170,7 @@ int main(int argc, char *argv[]) {
 			threadArray[i].join();
 		}
 
-		// t.stop();
+		t.stop();
 
 		// Print all the output to whatever file was entered for us
 
@@ -183,7 +183,7 @@ int main(int argc, char *argv[]) {
 		} else {
 			fprintf(stderr, "Unable to output!\n");
 		}
-		// printf("Time: %llu ns\n", t.duration());
+		printf("Time: %llu ns\n", t.duration());
 	}
 	return 0;
 }
