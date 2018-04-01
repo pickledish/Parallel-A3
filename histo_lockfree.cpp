@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <cstring>
 #include <cassert>
-// #include "Timer.h"
+#include "Timer.h"
 #include <chrono>
 
 #include <thread>

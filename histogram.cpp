@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <cstring>
 #include <cassert>
-// #include "Timer.h"
+#include "Timer.h"
 
 extern "C" {
 #include "ppmb_io.h"
