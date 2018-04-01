@@ -30,18 +30,18 @@ struct img {
 };
 
 struct hists {
-  int* hist_r;
-  int* hist_g;
-  int* hist_b;
+  atomic<int>* hist_r;
+  atomic<int>* hist_g;
+  atomic<int>* hist_b;
 };
 
 const int UNLOCKED = 0;
 const int LOCKED = 1;
 
-void print_histogram(FILE *f, int *hist, int N) {
+void print_histogram(FILE *f, atomic<int>* hist, int N) {
   fprintf(f, "%d\n", N+1);
   for(int i = 0; i <= N; i++) {
-    fprintf(f, "%d %d\n", i, hist[i]);
+    fprintf(f, "%d %d\n", i, hist[i].load());
   }
 }
 
@@ -101,7 +101,7 @@ int main(int argc, char *argv[]) {
   struct img input;
 
   if(!ppmb_read(input_file, &input.xsize, &input.ysize, &input.maxrgb, 
-		&input.r, &input.g, &input.b)) {
+    &input.r, &input.g, &input.b)) {
     if(input.maxrgb > 255) {
       printf("Maxrgb %d not supported\n", input.maxrgb);
       exit(1);
@@ -119,7 +119,11 @@ int main(int argc, char *argv[]) {
     int end = chunk_size;
 
     thread* threadArray = new thread[threads];
-    struct hists* resultHists = new struct hists[threads];
+
+    struct hists h;
+    h.hist_r = new atomic<int>[input.maxrgb+1]();
+    h.hist_g = new atomic<int>[input.maxrgb+1]();
+    h.hist_b = new atomic<int>[input.maxrgb+1]();
 
     // Run the thing! One chunk for each thread
     // ------------------------------------------------------------------------
@@ -129,17 +133,9 @@ int main(int argc, char *argv[]) {
 
     for (int i = 0; i < threads; i++)
     {
-        struct hists h;
-
-        h.hist_r = new int[input.maxrgb+1]();
-        h.hist_g = new int[input.maxrgb+1]();
-        h.hist_b = new int[input.maxrgb+1]();
-
         threadArray[i] = thread(histogram, &input, start, end, &h);
         start = start + chunk_size;
         end = (N > end + chunk_size) ? (end + chunk_size) : N + 1;
-
-        resultHists[i] = h;
     }
 
     for (int i = 0; i < threads; i++)
@@ -149,29 +145,14 @@ int main(int argc, char *argv[]) {
 
     // t.stop();
 
-    // Combine the output
+    // Combine the output and print
     // ------------------------------------------------------------------------
-
-    struct hists final;
-    final.hist_r = new int[input.maxrgb+1]();
-    final.hist_g = new int[input.maxrgb+1]();
-    final.hist_b = new int[input.maxrgb+1]();
-
-    for (int i = 0; i < threads; i++)
-    {
-        for (int j = 0; j < input.maxrgb+1; j++)
-        {
-          final.hist_r[j] += resultHists[i].hist_r[j];
-          final.hist_g[j] += resultHists[i].hist_g[j];
-          final.hist_b[j] += resultHists[i].hist_b[j];
-        }
-    }
 
     FILE *out = fopen(output_file, "w");
     if(out) {
-      print_histogram(out, final.hist_r, input.maxrgb);
-      print_histogram(out, final.hist_g, input.maxrgb);
-      print_histogram(out, final.hist_b, input.maxrgb);
+      print_histogram(out, h.hist_r, input.maxrgb);
+      print_histogram(out, h.hist_g, input.maxrgb);
+      print_histogram(out, h.hist_b, input.maxrgb);
       fclose(out);
     } else {
       fprintf(stderr, "Unable to output!\n");
