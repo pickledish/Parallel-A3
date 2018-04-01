@@ -21,5 +21,5 @@ ppmb_io.a: ppmb_io.o
 .phony: clean
 
 clean:
-	rm -f ppmb_io.a ppmb_io.o histogram
+	rm -f ppmb_io.a ppmb_io.o histogram histogram histo_private histo_lockfree histo_lock1 histo_lock2
 

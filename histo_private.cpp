@@ -45,31 +45,6 @@ struct hists {
 };
 
 // ----------------------------------------------------------------------------
-// Lock acquire and release methods (test-and-TAS lock impl)
-// ----------------------------------------------------------------------------
-
-const int UNLOCKED = 0;
-const int LOCKED = 1;
-
-atomic<int> standardOutput(UNLOCKED);
-
-void acquire(atomic<int>* b)
-{
-	while(true)
-	{
-		int expected = UNLOCKED;
-		if ((*b).compare_exchange_weak(expected, LOCKED)) break;
-	}
-	return;
-}
-
-void release(atomic<int>* b)
-{
-	(*b).store(UNLOCKED);
-	return;
-}
-
-// ----------------------------------------------------------------------------
 // Histogram tools for calculating hists and printing
 // ----------------------------------------------------------------------------
 
