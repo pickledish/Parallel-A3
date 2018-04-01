@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  31 MAR 2018 23:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 APR 2018 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -278,32 +278,65 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 28.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (29.84554pt too wide) in paragraph at lines 33--40
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 34.
+
+Overfull \hbox (29.84554pt too wide) in paragraph at lines 37--41
+ [] 
+ []
+
+
+Overfull \hbox (29.84554pt too wide) in paragraph at lines 46--53
+ [] 
+ []
+
+
+Overfull \hbox (29.84554pt too wide) in paragraph at lines 59--66
  [] 
  []
 
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./doc.aux) ) 
+Overfull \hbox (14.93855pt too wide) in paragraph at lines 70--71
+\OT1/cmr/m/n/10 Note, in this ex-er-cise, \OT1/cmtt/m/n/10 histo-lock1.cpp \OT1
+/cmr/m/n/10 uses a test-and-test-and-set lock im-ple-men-ta-tion, and \OT1/cmtt
+/m/n/10 histo-lock2.cpp
+ []
+
+
+Overfull \hbox (29.84554pt too wide) in paragraph at lines 73--80
+ [] 
+ []
+
+
+Overfull \hbox (29.84554pt too wide) in paragraph at lines 84--91
+ [] 
+ []
+
+[2] [3] (./doc.aux) ) 
 Here is how much of TeX's memory you used:
- 2414 strings out of 493014
- 31733 string characters out of 6133351
- 105015 words of memory out of 5000000
- 5942 multiletter control sequences out of 15000+600000
- 11196 words of font info for 44 fonts, out of 8000000 for 9000
+ 2418 strings out of 493014
+ 31789 string characters out of 6133351
+ 125015 words of memory out of 5000000
+ 5944 multiletter control sequences out of 15000+600000
+ 11533 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,16n,32p,270b,246s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
-.pfb>
-Output written on doc.pdf (1 page, 54305 bytes).
+ 27i,16n,32p,950b,248s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mtt10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+tt12.pfb>
+Output written on doc.pdf (3 pages, 105632 bytes).
 PDF statistics:
- 28 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
+ 50 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -27,16 +27,78 @@
 
 	\maketitle
 
-	\section{Table of Results}
+	\section*{Testing}
+
+	All of these tests were run on \texttt{node2x14a}, since both of the other machines (checked with \texttt{ps}) had other class members' projects running and I wanted the results to be accurate. Like with the last project, each table contains number of threads on the $y$-axis and the testing sample on the $x$-axis. Each individual box contains two numbers, being the mean on the top and the standard deviation on the bottom (being over 5 trials). All times are in milliseconds.
+
+	\section*{Baseline (\texttt{histogram.cpp})}
 
 	\begin{center}
 	\begin{tabular}{ |m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}| }
 	\hline
 	\textbf{Threads} & \textbf{Hawkes} & \textbf{Earth} & \textbf{Flood} & \textbf{Noise} & \textbf{Phobos} & \textbf{Bear} & \textbf{Univ} \\ \hline
-	\textbf{1}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}\\ \hline
-	\textbf{2}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}\\ \hline
-	\textbf{4}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}\\ \hline
-	\textbf{8}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}& \makecell{16.0 \\[-0.5em] 0.0}\\ \hline
+	\textbf{1}& \makecell{304.88 \\[-0.5em] 29.41}& \makecell{7616.09 \\[-0.5em] 148.93}& \makecell{374.44 \\[-0.5em] 5.98}& \makecell{1626.82 \\[-0.5em] 342.67}& \makecell{1398.10 \\[-0.5em] 20.60}& \makecell{1714.89 \\[-0.5em] 14.94}& \makecell{259.44 \\[-0.5em] 61.74}\\ \hline
 	\end{tabular} \end{center} 
 
+	\section*{Exercise 1 (\texttt{histo-private.cpp})}
+
+	\begin{center}
+	\begin{tabular}{ |m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}| }
+	\hline
+	\textbf{Threads} & \textbf{Hawkes} & \textbf{Earth} & \textbf{Flood} & \textbf{Noise} & \textbf{Phobos} & \textbf{Bear} & \textbf{Univ} \\ \hline
+	\textbf{1}& \makecell{429.43 \\[-0.5em] 14.20}& \makecell{14383 \\[-0.5em] 440.22}& \makecell{989.12 \\[-0.5em] 89.45}& \makecell{3642.26 \\[-0.5em] 10.92}& \makecell{3456.41 \\[-0.5em] 208.00}& \makecell{4192.49 \\[-0.5em] 317.16}& \makecell{700.45 \\[-0.5em] 13.43}\\ \hline
+	\textbf{2}& \makecell{1864.38 \\[-0.5em] 53.07}& \makecell{57044 \\[-0.5em] 5105.50}& \makecell{5499.71 \\[-0.5em] 448.22}& \makecell{25792 \\[-0.5em] 10284}& \makecell{17851 \\[-0.5em] 813.50}& \makecell{27073 \\[-0.5em] 1873.22}& \makecell{3467.33 \\[-0.5em] 383.90}\\ \hline
+	\textbf{4}& \makecell{3218.95 \\[-0.5em] 507.89}& \makecell{161842 \\[-0.5em] 14175}& \makecell{9820.26 \\[-0.5em] 1912.93}& \makecell{37836 \\[-0.5em] 5176.00}& \makecell{39225 \\[-0.5em] 8942.85}& \makecell{51007 \\[-0.5em] 14926}& \makecell{8743.43 \\[-0.5em] 1103.66}\\ \hline
+	\textbf{8}& \makecell{827.40 \\[-0.5em] 532.29}& \makecell{62360 \\[-0.5em] 13483}& \makecell{5162.08 \\[-0.5em] 682.93}& \makecell{15083 \\[-0.5em] 2811.90}& \makecell{17970 \\[-0.5em] 2035.45}& \makecell{17436 \\[-0.5em] 3111.69}& \makecell{1720.23 \\[-0.5em] 734.32}\\ \hline
+	\end{tabular} \end{center} 
+
+	\section*{Exercise 2 (\texttt{histo-lockfree.cpp})}
+
+
+	\begin{center}
+	\begin{tabular}{ |m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}| }
+	\hline
+	\textbf{Threads} & \textbf{Hawkes} & \textbf{Earth} & \textbf{Flood} & \textbf{Noise} & \textbf{Phobos} & \textbf{Bear} & \textbf{Univ} \\ \hline
+	\textbf{1}& \makecell{3191.49 \\[-0.5em] 329.76}& \makecell{87799 \\[-0.5em] 843.98}& \makecell{9403.61 \\[-0.5em] 2291.17}& \makecell{22904 \\[-0.5em] 461.11}& \makecell{21152 \\[-0.5em] 741.45}& \makecell{22386 \\[-0.5em] 1972.13}& \makecell{6473.95 \\[-0.5em] 486.52}\\ \hline
+	\textbf{2}& \makecell{3686.01 \\[-0.5em] 394.44}& \makecell{183538 \\[-0.5em] 21603}& \makecell{10856 \\[-0.5em] 1584.86}& \makecell{45021 \\[-0.5em] 12964}& \makecell{35569 \\[-0.5em] 1510.62}& \makecell{60564 \\[-0.5em] 4837.00}& \makecell{7119.77 \\[-0.5em] 247.13}\\ \hline
+	\textbf{4}& \makecell{4895.70 \\[-0.5em] 111.33}& \makecell{237139 \\[-0.5em] 15271}& \makecell{11400 \\[-0.5em] 437.93}& \makecell{38268 \\[-0.5em] 3885.41}& \makecell{48058 \\[-0.5em] 987.94}& \makecell{63844 \\[-0.5em] 2531.51}& \makecell{8388.58 \\[-0.5em] 149.81}\\ \hline
+	\textbf{8}& \makecell{5012.28 \\[-0.5em] 249.57}& \makecell{346773 \\[-0.5em] 24938}& \makecell{11087 \\[-0.5em] 146.89}& \makecell{27841 \\[-0.5em] 528.15}& \makecell{56883 \\[-0.5em] 2803.14}& \makecell{74258 \\[-0.5em] 11713}& \makecell{10700 \\[-0.5em] 296.57}\\ \hline
+	\end{tabular} \end{center} 
+
+	\section*{Exercise 3 (\texttt{histo-lock1.cpp} and \texttt{histo-lock2.cpp})}
+
+	Note, in this exercise, \texttt{histo-lock1.cpp} uses a test-and-test-and-set lock implementation, and \texttt{histo-lock2.cpp} instead uses a simple ticket lock implementation. The book had written the ticket lock to have a small backoff when your ticket wasn't up, but in my tests that made performance worse across the board, so I commented that line out.
+
+	\begin{center}
+	\begin{tabular}{ |m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}| }
+	\hline
+	\textbf{Threads} & \textbf{Hawkes} & \textbf{Earth} & \textbf{Flood} & \textbf{Noise} & \textbf{Phobos} & \textbf{Bear} & \textbf{Univ} \\ \hline
+	\textbf{1}& \makecell{6078.44 \\[-0.5em] 1455.92}& \makecell{288094 \\[-0.5em] 17587}& \makecell{19168 \\[-0.5em] 2138.81}& \makecell{58554 \\[-0.5em] 3458.94}& \makecell{52463 \\[-0.5em] 2409.19}& \makecell{57171 \\[-0.5em] 2573.38}& \makecell{11865 \\[-0.5em] 929.81}\\ \hline
+	\textbf{2}& \makecell{15979 \\[-0.5em] 909.13}& \makecell{961902 \\[-0.5em] 62948}& \makecell{45567 \\[-0.5em] 11176}& \makecell{139601 \\[-0.5em] 6245.23}& \makecell{118458 \\[-0.5em] 6609.32}& \makecell{127744 \\[-0.5em] 4368.74}& \makecell{25625 \\[-0.5em] 1312.17}\\ \hline
+	\textbf{4}& \makecell{34828 \\[-0.5em] 1416.68}& \makecell{2095337 \\[-0.5em] 278540}& \makecell{105301 \\[-0.5em] 1440.96}& \makecell{486225 \\[-0.5em] 11942}& \makecell{351477 \\[-0.5em] 27567}& \makecell{486927 \\[-0.5em] 15637}& \makecell{63407 \\[-0.5em] 2584.53}\\ \hline
+	\textbf{8}& \makecell{58346 \\[-0.5em] 1177.31}& \makecell{3703855 \\[-0.5em] 104262}& \makecell{185570 \\[-0.5em] 6941.64}& \makecell{775611 \\[-0.5em] 39178}& \makecell{663416 \\[-0.5em] 23926}& \makecell{804052 \\[-0.5em] 38491}& \makecell{119859 \\[-0.5em] 3457.35}\\ \hline
+	\end{tabular} \end{center} 
+
+
+	\begin{center}
+	\begin{tabular}{ |m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}|m{5em}| }
+	\hline
+	\textbf{Threads} & \textbf{Hawkes} & \textbf{Earth} & \textbf{Flood} & \textbf{Noise} & \textbf{Phobos} & \textbf{Bear} & \textbf{Univ} \\ \hline
+	\textbf{1}& \makecell{6152.37 \\[-0.5em] 1804.19}& \makecell{276564 \\[-0.5em] 280.11}& \makecell{17502 \\[-0.5em] 1592.61}& \makecell{56458 \\[-0.5em] 1739.23}& \makecell{50524 \\[-0.5em] 1500.47}& \makecell{57847 \\[-0.5em] 2230.25}& \makecell{12793 \\[-0.5em] 1627.33}\\ \hline
+	\textbf{2}& \makecell{16438 \\[-0.5em] 1542.63}& \makecell{1121514 \\[-0.5em] 80434}& \makecell{40007 \\[-0.5em] 852.65}& \makecell{139705 \\[-0.5em] 3792.12}& \makecell{121271 \\[-0.5em] 7770.04}& \makecell{237606 \\[-0.5em] 69103}& \makecell{26809 \\[-0.5em] 2052.15}\\ \hline
+	\textbf{4}& \makecell{38289 \\[-0.5em] 1219.87}& \makecell{2412147 \\[-0.5em] 110940}& \makecell{117930 \\[-0.5em] 4990.26}& \makecell{469225 \\[-0.5em] 8861.71}& \makecell{412130 \\[-0.5em] 30410}& \makecell{504072 \\[-0.5em] 32148}& \makecell{72978 \\[-0.5em] 3054.14}\\ \hline
+	\textbf{8}& \makecell{43231 \\[-0.5em] 1522.97}& \makecell{2841143 \\[-0.5em] 108619}& \makecell{137195 \\[-0.5em] 5156.76}& \makecell{556923 \\[-0.5em] 39609}& \makecell{462191 \\[-0.5em] 30677}& \makecell{555932 \\[-0.5em] 45609}& \makecell{81159 \\[-0.5em] 1868.90}\\ \hline
+	\end{tabular} \end{center} 
+
+	\section*{Results}
+
+	The results were surprisingly bad! Not a single one of the multithreaded versions of the program actually outperformed the serial version. This confused me for a while, but I've decided now that it shouldn't come as much of a surprise -- if the task were heavily CPU bound, with only a little bit of reading/writing to shared data, we'd see great improvement in the threading. However, each loop iteration in this task just does two near-instant arithmetic operations, and then writes to shared data, that's it. Since nearly all of each iteration's time is spent writing to shared data, it makes sense that there'd be little to no speedup to be found in parallelizing the task. And in fact, that's what we see here -- the overhead gotten by using threads and (even worse) locks for the shared data severely overcomes any benefit we'd get from sharing the ``work'', since there's actually barely any work to be done other than writing data.
+
+	\noindent By that logic, the version of the program that performs the best will be the one that writes to shared data the least (whether via atomics or locks), and that's indeed the case, as \verb|histo_private| does significantly better than all the other versions, though still not matching the serial version (threads must be expensive)!
+
+	\section*{Note}
+
+	One sad thing is that the \verb|histo_private| code doesn't actually produce perfectly correct results when run on more than one thread. Looking at the diff, it seems that a few bins are off by a small amount ($\pm 10$), which indicates that there's an off by one error or something somewhere. This is weird to me, since the code is very straightforward and I spent hours looking through it with no luck, it looks perfect to me (but maybe that's just because I don't have much experience with C++). The point is, since this program is clearly doing all the work in the right sort of way, I ask that you don't take off too many points for the slight incorrectness of it, and if you do, please at least let me know what's causing it -- because I can't find the problem for the life of me; all the other versions use nearly identical code and work fine. Thank you
+
 \end{document}
+
